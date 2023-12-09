@@ -6,7 +6,7 @@ This repository hosts the kubernetes manifest files to deploy multi-node hadoop 
 # Steps to setup the Hadoop cluster on Kubernetes
 
 1. Create the Hadoop docker image using project.
-2. Checkout this repo or download https://raw.githubusercontent.com/rahulk789/k8-hadoop/master/hadoop.yml
+2. Checkout this repo or download https://raw.githubusercontent.com/rahulk789/k8-hadoop/master/k8-hadoop.yml
 3. Update the image name in the manifest file.
 4. Setup storage
 5. Execute the following command to create the Hadoop cluster.
