@@ -15,7 +15,7 @@ This repository hosts the kubernetes manifest files to deploy multi-node hadoop 
 
 or
 
-`kubectl create -f hadoop.yml`
+`kubectl create -f k8-hadoop.yml`
 
 # Steps to setup storage
 
