@@ -5,8 +5,8 @@ This repository hosts the kubernetes manifest files to deploy multi-node hadoop 
 
 # Steps to setup the Hadoop cluster on Kubernetes
 
-1. Create the Hadoop docker image using eiswar/hadoop-on-docker project.
-2. Checkout this repo or download https://raw.githubusercontent.com/eiswar/hadoop-on-k8s/master/hadoop.yml
+1. Create the Hadoop docker image using project.
+2. Checkout this repo or download https://raw.githubusercontent.com/rahulk789/k8-hadoop/master/hadoop.yml
 3. Update the image name in the manifest file.
 4. Setup storage
 5. Execute the following command to create the Hadoop cluster.
@@ -24,7 +24,7 @@ or
 
 # How it works
 
-1. The single Kubernetes manifest file https://raw.githubusercontent.com/eiswar/hadoop-on-k8s/master/hadoop.yml will do the following things:
+1. The single Kubernetes manifest file https://raw.githubusercontent.com/rahulk789/k8-hadoop/master/hadoop.yml will do the following things:
 - Create a service account in Kubernetes for Hadoop operations.
 - Create a namespace in Kubernetes for Hadoop operations.
 - Create a role, cluster role, role-bindings, etc to grant privileges to the hadoop service account
