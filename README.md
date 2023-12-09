@@ -11,7 +11,7 @@ This repository hosts the kubernetes manifest files to deploy multi-node hadoop 
 4. Setup storage
 5. Execute the following command to create the Hadoop cluster.
 
-`kubectl create -f https://raw.githubusercontent.com/eiswar/hadoop-on-k8s/master/hadoop.yml`
+`kubectl create -f https://raw.githubusercontent.com/rahulk789/k8-hadoop/master/k8-hadoop.yml`
 
 or
 
