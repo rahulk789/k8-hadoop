@@ -85,7 +85,7 @@ spec:
   - name: port-18
     port: 37319
   - name: port-19
-    port: 40469          
+    port: 40469
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
@@ -110,19 +110,6 @@ roleRef:
   kind: Role
   name: hadoop-role
   apiGroup: rbac.authorization.k8s.io
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: hdfs-nn-pvc
-  labels:
-    name: hadoop-master
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 200Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -149,7 +136,7 @@ spec:
       serviceAccountName: hadoop-master
       containers:
       - name: hadoop-master
-        image: eiswar/hadoop:3.1.2
+        image: eiswar/hadoop:latest
         command: ["/usr/local/hadoop/sbin/bootstrap.sh"]
         args: ["master"]
         imagePullPolicy: IfNotPresent
@@ -158,8 +145,8 @@ spec:
           name: hdfs-namenode-data
       volumes:
       - name: hdfs-namenode-data
-        persistentVolumeClaim:
-          claimName: hdfs-nn-pvc
+        hostPath:
+          path: /hadoop
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -179,7 +166,7 @@ spec:
       serviceAccountName: hadoop-master
       containers:
       - name: hadoop-worker
-        image: eiswar/hadoop:3.1.2
+        image: eiswar/hadoop:latest
         command: ["/usr/local/hadoop/sbin/bootstrap.sh"]
         args: ["worker"]
         volumeMounts:
